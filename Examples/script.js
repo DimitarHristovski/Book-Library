@@ -1,3 +1,14 @@
+let myLibrary = [];
+
+function Book() {
+  
+}
+
+
+
+
+
+
 // #1.0 - OOP - Object Constructor Function
 // function Player(arg1, agr2) {
 //     this.name = arg1;
