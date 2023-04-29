@@ -31,6 +31,7 @@
         </div>
         <div class="center">
             <aside class="aside">
+                <h1>My Library</h1>
                 <form class="book-form">
                     <label for="book-title">Title:</label>
                     <input type="text" id="book-title" name="title">
@@ -45,107 +46,152 @@
                 </form>
             </aside>
             <div class="main mainD">
-                <div class="carousel-container">
-                    <div class="carousel">
-                        <div class="card active">
-                            <div class="card-info">
-                                <label htmlFor="title">Title</label>
-                                <h2>Fairy tales</h2>
-                                <label htmlFor="author">Author</label>
-                                <p>Hans Christian Andersen</p>
-                                <label htmlFor="pages">Pages</label>
-                                <p>784</p>
-                                <label className="form-check-label">
-                                    <input type="checkbox" className="form-check-input" name="check" id="check"
-                                        value="checkedValue" checked={true} />
-                                    <span id="read-status">Read</span>
-                                </label>
-                            </div>
+
+                <div class="carousel1">
+                    <!-- <div class="card active">
+                        <div class="card-info">
+                            <label htmlFor="title">Title</label>
+                            <h2>Fairy tales</h2>
+                            <label htmlFor="author">Author</label>
+                            <p>Hans Christian Andersen</p>
+                            <label htmlFor="pages">Pages</label>
+                            <p>784</p>
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" name="check" id="check"
+                                    value="checkedValue" checked={true} />
+                                <span id="read-status">Read</span>
+                            </label>
                         </div>
-                        <div class="card">
-                            <div class="card-info">
-                                <label htmlFor="title">Title</label>
-                                <h2>Fairy tales</h2>
-                                <label htmlFor="author">Author</label>
-                                <p>Hans Christian Andersen</p>
-                                <label htmlFor="pages">Pages</label>
-                                <p>784</p>
-                                <label className="form-check-label">
-                                    <input type="checkbox" className="form-check-input" name="check" id="check"
-                                        value="checkedValue" checked={true} />
-                                    <span id="read-status">Read</span>
-                                </label>
-                            </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-info">
+                            <label htmlFor="title">Title</label>
+                            <h2>Fairy tales</h2>
+                            <label htmlFor="author">Author</label>
+                            <p>Hans Christian Andersen</p>
+                            <label htmlFor="pages">Pages</label>
+                            <p>784</p>
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" name="check" id="check"
+                                    value="checkedValue" checked={true} />
+                                <span id="read-status">Read</span>
+                            </label>
                         </div>
+                    </div> -->
 
 
-                    </div>
-                    <div class="carousel-buttons">
-                        <button id="prev">&#10094;</button>
-                        <button id="next">&#10095;</button>
-                    </div>
                 </div>
+
+
             </div>
             <div class="main mainB">
-                <table className="customTable">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Pages</th>
-                            <th>Take a Book</th>
-                            <th>Return a Book</th>
-                            <th>Read Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="book-row-">
-                            <td>LOTR</td>
-                            <td>Tolkien</td>
-                            <td>323</td>
-                            <td><button className="change-color-btn" data-row="1">Change Color</button></td>
-                            <td><button className="reset-color-btn" data-row="1">Reset Color</button></td>
-                            <td> <label>
-                                    <input type="checkbox" class="read-checkbox">
-                                    <span>Read</span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr id="book-row-">
-                            <td>Harry Potter and the Philosopher's Stone</td>
-                            <td>J.K. Rowling</td>
-                            <td>223</td>
-                            <td><button className="change-color-btn" data-row="2">Change Color</button></td>
-                            <td><button className="reset-color-btn" data-row="2">Reset Color</button></td>
-                            <td><label>
-                                    <input type="checkbox" class="read-checkbox">
-                                    <span>Read</span>
-                                </label></td>
-                        </tr>
-                        <tr id="book-row-">
-                            <td>The Hunger Games</td>
-                            <td>Suzanne Collins</td>
-                            <td>374</td>
-                            <td><button className="change-color-btn" data-row="3">Change Color</button></td>
-                            <td><button className="reset-color-btn" data-row="3">Reset Color</button></td>
-                            <td><label>
-                                    <input type="checkbox" class="read-checkbox">
-                                    <span>Read</span>
-                                </label></td>
-                        </tr>
-                        <tr id="book-row-">
-                            <td>To Kill a Mockingbird</td>
-                            <td>Harper Lee</td>
-                            <td>281</td>
-                            <td><button className="change-color-btn" data-row="4">Change Color</button></td>
-                            <td><button className="reset-color-btn" data-row="4">Reset Color</button></td>
-                            <td><label>
-                                    <input type="checkbox" class="read-checkbox">
-                                    <span>Read</span>
-                                </label></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="container-table">
+                    <table class="customTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Pages</th>
+                                <th>Take a Book</th>
+                                <th>Return a Book</th>
+                                <th>Read Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="book-row-1">
+                                <td>LOTR</td>
+                                <td>Tolkien</td>
+                                <td>323</td>
+                                <td><button class="change-color-btn btn" data-row="1">Take </button></td>
+                                <td><button class="reset-color-btn btn" data-row="1">Return</button></td>
+                                <td> <label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr id="book-row-2">
+                                <td>Harry Potter and the Philosopher's Stone</td>
+                                <td>J.K. Rowling</td>
+                                <td>223</td>
+                                <td><button class="change-color-btn btn" data-row="2">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="2">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-3">
+                                <td>The Hunger Games</td>
+                                <td>Suzanne Collins</td>
+                                <td>374</td>
+                                <td><button class="change-color-btn btn" data-row="3">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="3">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-4">
+                                <td>To Kill a Mockingbird</td>
+                                <td>Harper Lee</td>
+                                <td>281</td>
+                                <td><button class="change-color-btn btn" data-row="4">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="4">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-5">
+                                <td>The Adventures of Huckleberry Finn</td>
+                                <td> Mark Twain</td>
+                                <td>366</td>
+                                <td><button class="change-color-btn btn" data-row="5">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="5">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-6">
+                                <td>Brave New World</td>
+                                <td>Aldous Huxley</td>
+                                <td> 288</td>
+                                <td><button class="change-color-btn btn" data-row="6">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="6">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-7">
+                                <td>The Hobbit</td>
+                                <td>Tolkien</td>
+                                <td>310 </td>
+                                <td><button class="change-color-btn btn" data-row="7">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="7">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-8">
+                                <td>The Catcher in the Rye</td>
+                                <td>J.D. Salinger </td>
+                                <td>224 </td>
+                                <td><button class="change-color-btn btn" data-row="8">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="8">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
 
             <div class="main mainL"></div>
