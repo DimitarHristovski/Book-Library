@@ -39,7 +39,7 @@
     height:90vh;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-content: space-evenly;
     flex-wrap: wrap;
 
 }
@@ -83,11 +83,13 @@ margin: auto;}
     background-color: rgb(228, 234, 240);
 
 }
-
+.carousel1{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 
   
   
 
  
-    

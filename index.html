@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/form.css">
+    <link rel="stylesheet" href="./assets/css/carousel.css">
+    <script src="./js/script.js" defer></script>
+    <script src="./js/carousel.js" defer></script>
+    <script src="./js/form.js" defer></script>
+    <script src="./js/table.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><img src="./icons8-story-book-96.png" alt=""></div>
+            <div class="filter">
+                <button id="filter-donate" class="btn">Donate Books</button>
+                <button id="filter-borrow" class="btn"> Borrow Books</button>
+                <button id="filter-legend" class="btn">show statistics</button>
+            </div>
+        </div>
+        <div class="center">
+            <aside class="aside">
+                <h1>My Library</h1>
+                <form class="book-form">
+                    <label for="book-title">Title:</label>
+                    <input type="text" id="book-title" name="title">
+
+                    <label for="book-author">Author:</label>
+                    <input type="text" id="book-author" name="author">
+
+                    <label for="book-pages">Pages:</label>
+                    <input type="number" id="book-pages" name="pages">
+
+                    <button value="Submit" class="btn" id="button">Donate a Book</button>
+                </form>
+            </aside>
+            <div class="main mainD">
+
+                <div class="carousel1">
+                    <!-- <div class="card active">
+                        <div class="card-info">
+                            <label htmlFor="title">Title</label>
+                            <h2>Fairy tales</h2>
+                            <label htmlFor="author">Author</label>
+                            <p>Hans Christian Andersen</p>
+                            <label htmlFor="pages">Pages</label>
+                            <p>784</p>
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" name="check" id="check"
+                                    value="checkedValue" checked={true} />
+                                <span id="read-status">Read</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-info">
+                            <label htmlFor="title">Title</label>
+                            <h2>Fairy tales</h2>
+                            <label htmlFor="author">Author</label>
+                            <p>Hans Christian Andersen</p>
+                            <label htmlFor="pages">Pages</label>
+                            <p>784</p>
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" name="check" id="check"
+                                    value="checkedValue" checked={true} />
+                                <span id="read-status">Read</span>
+                            </label>
+                        </div>
+                    </div> -->
+
+
+                </div>
+
+
+            </div>
+            <div class="main mainB">
+                <div class="container-table">
+                    <table class="customTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Pages</th>
+                                <th>Take a Book</th>
+                                <th>Return a Book</th>
+                                <th>Read Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="book-row-1">
+                                <td>LOTR</td>
+                                <td>Tolkien</td>
+                                <td>323</td>
+                                <td><button class="change-color-btn btn" data-row="1">Take </button></td>
+                                <td><button class="reset-color-btn btn" data-row="1">Return</button></td>
+                                <td> <label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr id="book-row-2">
+                                <td>Harry Potter and the Philosopher's Stone</td>
+                                <td>J.K. Rowling</td>
+                                <td>223</td>
+                                <td><button class="change-color-btn btn" data-row="2">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="2">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-3">
+                                <td>The Hunger Games</td>
+                                <td>Suzanne Collins</td>
+                                <td>374</td>
+                                <td><button class="change-color-btn btn" data-row="3">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="3">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-4">
+                                <td>To Kill a Mockingbird</td>
+                                <td>Harper Lee</td>
+                                <td>281</td>
+                                <td><button class="change-color-btn btn" data-row="4">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="4">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-5">
+                                <td>The Adventures of Huckleberry Finn</td>
+                                <td> Mark Twain</td>
+                                <td>366</td>
+                                <td><button class="change-color-btn btn" data-row="5">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="5">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-6">
+                                <td>Brave New World</td>
+                                <td>Aldous Huxley</td>
+                                <td> 288</td>
+                                <td><button class="change-color-btn btn" data-row="6">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="6">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-7">
+                                <td>The Hobbit</td>
+                                <td>Tolkien</td>
+                                <td>310 </td>
+                                <td><button class="change-color-btn btn" data-row="7">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="7">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+                            <tr id="book-row-8">
+                                <td>The Catcher in the Rye</td>
+                                <td>J.D. Salinger </td>
+                                <td>224 </td>
+                                <td><button class="change-color-btn btn" data-row="8">Take</button></td>
+                                <td><button class="reset-color-btn btn" data-row="8">Return</button></td>
+                                <td><label>
+                                        <input type="checkbox" class="read-checkbox">
+                                        <span>Read</span>
+                                    </label></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="main mainL"></div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
