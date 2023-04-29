@@ -150,7 +150,10 @@ box-shadow: 15px 15px 30px #bebebe,
  .btn{
   width: 100px;
  }
+ 
  .container-table{
+  margin-top: 50px;
+  margin: auto;
   width: 80%;
   font-size: 8px;
  }
