@@ -146,4 +146,13 @@ box-shadow: 15px 15px 30px #bebebe,
     margin-bottom: 10px;
   }
   
-  
+  @media only screen and (max-width:768px) {
+ .btn{
+  width: 100px;
+ }
+ .container-table{
+  width: 80%;
+  font-size: 8px;
+ }
+  }
+    
