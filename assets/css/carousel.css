@@ -1,89 +1,102 @@
 
 
 .carousel-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    padding:  50px 0 50px 0;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  padding:  50px 0 50px 0;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#prev,
+#next {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#prev:focus,
+#next:focus {
+  outline: none;
+}
+
+#prev {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex: 0 0 calc((100% / 2) - 15px);
+    margin-right: 15px;
   }
-  
-  .carousel {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+}
+
+@media screen and (max-width: 576px) {
+  .card {
+    flex: 0 0 calc(100%);
+    margin-right: 0;
   }
+  .carousel-buttons {
+      display: none;
+    }
+  }
+
+
+
+
+
+
+ 
   
   .card {
-    flex: 0 0 calc((100% / 3) - 20px);
-    margin-right: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    background-color: #fff;
   }
   
-  .card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .card-info {
-    padding: 10px;
+  .card-info label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
   }
   
   .card-info h2 {
-    margin: 0;
-    font-size: 1.2rem;
+    font-size: 24px;
+    margin-bottom: 10px;
   }
   
   .card-info p {
-    margin: 5px 0;
-    font-size: 0.9rem;
+    font-size: 14px;
+    margin-bottom: 10px;
   }
   
-  .carousel-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+  .form-check-label input[type="checkbox"]:checked + #read-status {
+    background-color: green;
+    color: white;
   }
-  
-  #prev,
-  #next {
-    background-color: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  #prev:focus,
-  #next:focus {
-    outline: none;
-  }
-  
-  #prev {
-    margin-right: 10px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .card {
-      flex: 0 0 calc((100% / 2) - 15px);
-      margin-right: 15px;
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    .card {
-      flex: 0 0 calc(100%);
-      margin-right: 0;
-    }
-    .carousel-buttons {
-        display: none;
-      }
-    }

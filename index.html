@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./assets/css/carousel.css">
     <script src="./js/script.js" defer></script>
     <script src="./js/carousel.js" defer></script>
+    <script src="./js/form.js" defer></script>
+    <script src="./js/table.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -39,54 +41,111 @@
                     <label for="book-pages">Pages:</label>
                     <input type="number" id="book-pages" name="pages">
 
-                    <button type="submit" value="Submit" class="btn">Donate a Book</button>
+                    <button value="Submit" class="btn" id="button">Donate a Book</button>
                 </form>
             </aside>
-            <div class="main mainD"></div>
-            <div class="main mainB">
+            <div class="main mainD">
                 <div class="carousel-container">
                     <div class="carousel">
                         <div class="card active">
-                            <img src="https://via.placeholder.com/150" alt="placeholder image">
                             <div class="card-info">
-                                <h2>Card 1</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <label htmlFor="title">Title</label>
+                                <h2>Fairy tales</h2>
+                                <label htmlFor="author">Author</label>
+                                <p>Hans Christian Andersen</p>
+                                <label htmlFor="pages">Pages</label>
+                                <p>784</p>
+                                <label className="form-check-label">
+                                    <input type="checkbox" className="form-check-input" name="check" id="check"
+                                        value="checkedValue" checked={true} />
+                                    <span id="read-status">Read</span>
+                                </label>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="https://via.placeholder.com/150" alt="placeholder image">
                             <div class="card-info">
-                                <h2>Card 2</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <label htmlFor="title">Title</label>
+                                <h2>Fairy tales</h2>
+                                <label htmlFor="author">Author</label>
+                                <p>Hans Christian Andersen</p>
+                                <label htmlFor="pages">Pages</label>
+                                <p>784</p>
+                                <label className="form-check-label">
+                                    <input type="checkbox" className="form-check-input" name="check" id="check"
+                                        value="checkedValue" checked={true} />
+                                    <span id="read-status">Read</span>
+                                </label>
                             </div>
                         </div>
-                        <div class="card">
-                            <img src="https://via.placeholder.com/150" alt="placeholder image">
-                            <div class="card-info">
-                                <h2>Card 3</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="https://via.placeholder.com/150" alt="placeholder image">
-                            <div class="card-info">
-                                <h2>Card 4</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="https://via.placeholder.com/150" alt="placeholder image">
-                            <div class="card-info">
-                                <h2>Card 5</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
+
+
                     </div>
                     <div class="carousel-buttons">
                         <button id="prev">&#10094;</button>
                         <button id="next">&#10095;</button>
                     </div>
                 </div>
+            </div>
+            <div class="main mainB">
+                <table className="customTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Pages</th>
+                            <th>Take a Book</th>
+                            <th>Return a Book</th>
+                            <th>Read Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="book-row-">
+                            <td>LOTR</td>
+                            <td>Tolkien</td>
+                            <td>323</td>
+                            <td><button className="change-color-btn" data-row="1">Change Color</button></td>
+                            <td><button className="reset-color-btn" data-row="1">Reset Color</button></td>
+                            <td> <label>
+                                    <input type="checkbox" class="read-checkbox">
+                                    <span>Read</span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr id="book-row-">
+                            <td>Harry Potter and the Philosopher's Stone</td>
+                            <td>J.K. Rowling</td>
+                            <td>223</td>
+                            <td><button className="change-color-btn" data-row="2">Change Color</button></td>
+                            <td><button className="reset-color-btn" data-row="2">Reset Color</button></td>
+                            <td><label>
+                                    <input type="checkbox" class="read-checkbox">
+                                    <span>Read</span>
+                                </label></td>
+                        </tr>
+                        <tr id="book-row-">
+                            <td>The Hunger Games</td>
+                            <td>Suzanne Collins</td>
+                            <td>374</td>
+                            <td><button className="change-color-btn" data-row="3">Change Color</button></td>
+                            <td><button className="reset-color-btn" data-row="3">Reset Color</button></td>
+                            <td><label>
+                                    <input type="checkbox" class="read-checkbox">
+                                    <span>Read</span>
+                                </label></td>
+                        </tr>
+                        <tr id="book-row-">
+                            <td>To Kill a Mockingbird</td>
+                            <td>Harper Lee</td>
+                            <td>281</td>
+                            <td><button className="change-color-btn" data-row="4">Change Color</button></td>
+                            <td><button className="reset-color-btn" data-row="4">Reset Color</button></td>
+                            <td><label>
+                                    <input type="checkbox" class="read-checkbox">
+                                    <span>Read</span>
+                                </label></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="main mainL"></div>
