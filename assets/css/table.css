@@ -1,0 +1,103 @@
+
+  
+  /* Table styling */
+  #books-list {
+    margin: auto;
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #books-list thead {
+    background-color: #ddd;
+  }
+  
+  #books-list thead td {
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #books-list tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #books-list tbody td:last-child {
+    text-align: center;
+  }
+  
+  /* Modal styling */
+  #modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  #modal .modal-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  #modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #modal .modal-header h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  #modal .modal-header .close-modal {
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  #modal .modal-content {
+    margin-bottom: 20px;
+  }
+  
+  #modal .modal-options {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #modal button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #modal button.confirm-removal {
+    background-color: #e74c3c;
+    color: #fff;
+    margin-left: 10px;
+  }
+  
+  #modal button.cancel-removal {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+   @media only screen and (max-width:768px) {
+
+    #books-list{
+        max-width: 200px;
+    }
+
+  } 

@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/form.css">
-    <link rel="stylesheet" href="./assets/css/carousel.css">
-    <script src="./js/script.js" defer></script>
-    <script src="./js/carousel.js" defer></script>
-    <script src="./js/form.js" defer></script>
-    <script src="./js/table.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/table.css">
+    <link rel="stylesheet" href="./assets/css/chart.css">
+    <script src="./js/filter.js" defer></script>
+    <script src="./js/scripts.js" defer></script>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -25,176 +26,120 @@
             <div class="logo"><img src="./icons8-story-book-96.png" alt=""></div>
             <div class="filter">
                 <button id="filter-donate" class="btn">Donate Books</button>
-                <button id="filter-borrow" class="btn"> Borrow Books</button>
+                <!-- <button id="filter-borrow" class="btn"> Borrow Books</button> -->
                 <button id="filter-legend" class="btn">show statistics</button>
             </div>
         </div>
         <div class="center">
             <aside class="aside">
                 <h1>Book Library</h1>
-                <form class="book-form">
-                    <label for="book-title">Title:</label>
-                    <input type="text" id="book-title" name="title">
+                <hr>
+                <form>
+                    <div class="input-block">
+                        <input id="title" type="text" name="title" autocomplete="off" required>
+                        <span class="placeholder">What is the title of the book?</span>
+                        <div class="validation-block">
+                            <p class="validation-text title">Please fill out this field.</p>
+                        </div>
+                    </div>
 
-                    <label for="book-author">Author:</label>
-                    <input type="text" id="book-author" name="author">
+                    <div class="input-block">
+                        <input id="name" type="text" name="name" autocomplete="off" required>
+                        <span class="placeholder">Who is the author of the book?</span>
+                        <div class="validation-block">
+                            <p class="validation-text name">Please fill out this field.</p>
+                        </div>
+                    </div>
 
-                    <label for="book-pages">Pages:</label>
-                    <input type="number" id="book-pages" name="pages">
+                    <div class="input-block">
+                        <input id="number" type="text" name="number" autocomplete="off" required>
+                        <span class="placeholder">How many pages are in the book?</span>
+                        <div class="validation-block">
+                            <p class="validation-text number">Please enter a number bigger than 0.</p>
+                        </div>
+                    </div>
 
-                    <button value="Submit" class="btn" id="button">Donate a Book</button>
+                    <label class="checkbox">
+                        <span class="checkbox-input">
+                            <input type="checkbox" name="checkbox" autocomplete="off">
+                            <span class="checkbox-control">
+                                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden="true"
+                                    focusable="false">
+                                    <path fill='none' stroke='currentColor' stroke-width='3'
+                                        d='M1.73 12.91l6.37 6.37L22.79 4.59'>
+                                </svg>
+                            </span>
+                        </span>
+                        <span class="checkbox-label">I have already read this book!</span>
+                    </label>
+
+                    <input type="button" value="ADD A NEW BOOK" id="add-book">
                 </form>
             </aside>
             <div class="main mainD">
 
                 <div class="carousel1">
-                    <!-- <div class="card active">
-                        <div class="card-info">
-                            <label htmlFor="title">Title</label>
-                            <h2>Fairy tales</h2>
-                            <label htmlFor="author">Author</label>
-                            <p>Hans Christian Andersen</p>
-                            <label htmlFor="pages">Pages</label>
-                            <p>784</p>
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="check" id="check"
-                                    value="checkedValue" checked={true} />
-                                <span id="read-status">Read</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-info">
-                            <label htmlFor="title">Title</label>
-                            <h2>Fairy tales</h2>
-                            <label htmlFor="author">Author</label>
-                            <p>Hans Christian Andersen</p>
-                            <label htmlFor="pages">Pages</label>
-                            <p>784</p>
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="check" id="check"
-                                    value="checkedValue" checked={true} />
-                                <span id="read-status">Read</span>
-                            </label>
-                        </div>
-                    </div> -->
 
 
-                </div>
 
+                    <button type="button" id="delete-all-btn">DELETE ALL</button>
 
-            </div>
-            <div class="main mainB">
-                <div class="container-table">
-                    <table class="customTable">
-                        <thead>
+                    <table id="books-list">
+                        <thead id="book-requirements">
                             <tr>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Pages</th>
-                                <th>Take a Book</th>
-                                <th>Return a Book</th>
-                                <th>Read Status</th>
+                                <td>TITLE</td>
+                                <td>AUTHOR</td>
+                                <td>PAGES</td>
+                                <td>STATUS</td>
+                                <td>REMOVAL</td>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr id="book-row-1">
-                                <td>LOTR</td>
-                                <td>Tolkien</td>
-                                <td>323</td>
-                                <td><button class="change-color-btn btn" data-row="1">Take </button></td>
-                                <td><button class="reset-color-btn btn" data-row="1">Return</button></td>
-                                <td> <label>
-                                        <input type="checkbox" class="read-checkbox">
-                                        <span>Read</span>
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr id="book-row-2">
-                                <td>Harry Potter and the Philosopher's Stone</td>
-                                <td>J.K. Rowling</td>
-                                <td>223</td>
-                                <td><button class="change-color-btn btn" data-row="2">Take</button></td>
-                                <td><button class="reset-color-btn btn" data-row="2">Return</button></td>
-                                <td><label>
-                                        <input type="checkbox" class="read-checkbox">
-                                        <span>Read</span>
-                                    </label></td>
-                            </tr>
-                            <tr id="book-row-3">
-                                <td>The Hunger Games</td>
-                                <td>Suzanne Collins</td>
-                                <td>374</td>
-                                <td><button class="change-color-btn btn" data-row="3">Take</button></td>
-                                <td><button class="reset-color-btn btn" data-row="3">Return</button></td>
-                                <td><label>
-                                        <input type="checkbox" class="read-checkbox">
-                                        <span>Read</span>
-                                    </label></td>
-                            </tr>
-                            <tr id="book-row-4">
-                                <td>To Kill a Mockingbird</td>
-                                <td>Harper Lee</td>
-                                <td>281</td>
-                                <td><button class="change-color-btn btn" data-row="4">Take</button></td>
-                                <td><button class="reset-color-btn btn" data-row="4">Return</button></td>
-                                <td><label>
-                                        <input type="checkbox" class="read-checkbox">
-                                        <span>Read</span>
-                                    </label></td>
-                            </tr>
-                            <tr id="book-row-5">
-                                <td>The Adventures of Huckleberry Finn</td>
-                                <td> Mark Twain</td>
-                                <td>366</td>
-                                <td><button class="change-color-btn btn" data-row="5">Take</button></td>
-                                <td><button class="reset-color-btn btn" data-row="5">Return</button></td>
-                                <td><label>
-                                        <input type="checkbox" class="read-checkbox">
-                                        <span>Read</span>
-                                    </label></td>
-                            </tr>
-                            <tr id="book-row-6">
-                                <td>Brave New World</td>
-                                <td>Aldous Huxley</td>
-                                <td> 288</td>
-                                <td><button class="change-color-btn btn" data-row="6">Take</button></td>
-                                <td><button class="reset-color-btn btn" data-row="6">Return</button></td>
-                                <td><label>
-                                        <input type="checkbox" class="read-checkbox">
-                                        <span>Read</span>
-                                    </label></td>
-                            </tr>
-                            <tr id="book-row-7">
-                                <td>The Hobbit</td>
-                                <td>Tolkien</td>
-                                <td>310 </td>
-                                <td><button class="change-color-btn btn" data-row="7">Take</button></td>
-                                <td><button class="reset-color-btn btn" data-row="7">Return</button></td>
-                                <td><label>
-                                        <input type="checkbox" class="read-checkbox">
-                                        <span>Read</span>
-                                    </label></td>
-                            </tr>
-                            <tr id="book-row-8">
-                                <td>The Catcher in the Rye</td>
-                                <td>J.D. Salinger </td>
-                                <td>224 </td>
-                                <td><button class="change-color-btn btn" data-row="8">Take</button></td>
-                                <td><button class="reset-color-btn btn" data-row="8">Return</button></td>
-                                <td><label>
-                                        <input type="checkbox" class="read-checkbox">
-                                        <span>Read</span>
-                                    </label></td>
-                            </tr>
-
+                        <tbody id="table-body">
+                            <!-- HERE IS A LIST OF BOOKS GENERATED BY JS -->
                         </tbody>
+
                     </table>
+
+                    <!-- MODAL -->
+                    <div id="modal" class="close">
+                        <div class="modal-card">
+                            <div class="modal-header">
+                                <h2>BOOKS REMOVAL</h2>
+                                <span class="close-modal close">&times;</span>
+                            </div>
+                            <div class="modal-content">
+                                <p>Do you really want to delete all the books from your library?</p>
+                                <div class="modal-options">
+                                    <button type="button" class="cancel-removal close">Cancel</button>
+                                    <button type="button" class="confirm-removal">DELETE ALL</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- <div class="main mainB">
+
+            </div> -->
+
+            <div class="main mainL">
+                <div id="library-info">
+                    <h2>Chart</h2>
+                    <div class="chart-container">
+                        <div class="chart-bar" id="books-read-bar"></div>
+                        <div class="chart-bar" id="books-unread-bar"></div>
+                        <div class="chart-bar" id="total-books-bar"></div>
+                    </div>
+                    <div class="chart-labels">
+                        <p>BOOKS READ: <span id="books-read"></span></p>
+                        <p>BOOKS UNREAD: <span id="books-unread"></span></p>
+                        <p>TOTAL BOOKS: <span id="total-books"></span></p>
+                    </div>
                 </div>
 
             </div>
-
-            <div class="main mainL"></div>
 
         </div>
 

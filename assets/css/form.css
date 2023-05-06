@@ -1,161 +1,128 @@
-.book-form {
-    display: flex;
-    flex-direction: column;
-/* border: 1px solid black; */
-padding: 10px;
-background-color: rgb(213, 216, 219);
-border-radius: 20px;
-text-align: left !important;
-box-shadow: 15px 15px 30px #bebebe,
-             -15px -15px 30px #ffffff;
-  }
-  
- label {
-    margin-bottom: 10px;
+/* Set font and color styles for the form */
+form {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
 
-  }
-  
-  input[type="text"],
-  input[type="number"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    width: 300px;
-  }
-   .container-table{
-    margin-top: 50px;
+/* Style the input fields */
+.input-block {
+  position: relative;
+  margin-bottom: 20px;
+}
 
-    display: flex;
-    align-content: center;
-   }
-  table.customTable {
-    margin: auto;
-  width: 80%;
-    background-color: #FFFFFF;
-    border-collapse: collapse;
-    border-width: 2px;
-    border-color: #ccc;
-    border-style: solid;
-    color: #000000;
-  }
-  
-  table.customTable td, table.customTable th {
-    border-width: 2px;
-    border-color: #ccc;
-    border-style: solid;
-    padding: 5px;
-  }
-  
-  table.customTable thead {
-    background-color: #7EA8F8;
-  }
+input[type="text"] {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 15px;
+  width: 300px;
+  max-width: 100%;
+}
 
-  .unread {
-    background-color: #ffcccc;
-  }
-  
-  table {
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 8px;
-    border: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  .read-cell {
-    font-weight: bold;
-  }
-  .card {
-    display: block;
-    position: relative;
-    width: 300px;
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card-info {
-    margin-top: 20px;
-  }
-  
-  .card-info label {
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .card-info h2 {
-    margin-top: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .card-info p {
-    margin-top: 5px;
-    font-size: 16px;
-    color: #666;
-  }
-  
-  .form-check-label {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .form-check-label input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  .form-check-label span#read-status {
-    font-weight: bold;
-  }
-  
-  
-  .card-info label {
-    display: block;
-    font-size: 12px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-  }
-  
-  .card-info h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .card-info p {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  @media only screen and (max-width:768px) {
- .btn{
-  width: 100px;
- }
- 
- .container-table{
-  margin-top: 50px;
-  margin: auto;
-  width: 80%;
-  font-size: 8px;
- }
-  }
-    
+input[type="text"]:focus {
+  outline: none;
+  border-bottom-color: #6b8ce8;
+}
+
+.placeholder {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #aaa;
+  transition: all 0.2s ease-out;
+}
+
+input[type="text"]:focus + .placeholder,
+input[type="text"]:valid + .placeholder {
+  top: -12px;
+  left: 5px;
+  font-size: 12px;
+  color: #6b8ce8;
+}
+
+/* Style the validation text for the input fields */
+.validation-text {
+  margin: 5px 0 0;
+  color: #ff6961;
+  font-size: 12px;
+  display: none;
+}
+
+.validation-text.active {
+  display: block;
+}
+
+/* Style the checkbox */
+.checkbox {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-input {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  background-color: #aaa;
+}
+
+.checkbox-control {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+}
+
+.checkbox-input input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-input input[type="checkbox"]:checked + .checkbox-control {
+  display: block;
+  background-color: #6b8ce8;
+}
+
+.checkbox-control svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  visibility: hidden;
+}
+
+.checkbox-input input[type="checkbox"]:checked + .checkbox-control svg {
+  visibility: visible;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Style the submit button */
+#add-book {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  background-color: #6b8ce8;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+#add-book:hover {
+  background-color: #4d6ac4;
+}

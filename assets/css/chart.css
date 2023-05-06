@@ -1,0 +1,61 @@
+#library-info {
+    margin-top: 50px;
+    text-align: center;
+    width: 80%;
+margin: auto;
+  }
+  
+  .chart-container {
+    display: flex;
+    align-items: flex-end;
+    height: 400px;
+    margin: 20px 0;
+  }
+  
+  .chart-bar {
+    width: 30%;
+    height: 100%;
+    margin: 0 10px;
+    background-color: #ccc;
+    transition: height 0.5s;
+  }
+  
+  .chart-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  #books-read-bar {
+    height: 30%;
+    background-color: #00b894;
+  }
+  
+  #books-unread-bar {
+    height: 30%;
+    background-color: #0984e3;
+  }
+  
+  #total-books-bar {
+    height: 30%;
+    background-color: #6c5ce7;
+  }
+  
+  #delete-all-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    align-content: end;
+    margin: auto;
+  }
+  
+  #delete-all-btn:hover {
+    background-color: #c0392b;
+  }
+  
