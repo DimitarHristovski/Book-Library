@@ -1,9 +1,7 @@
 document
   .querySelector("#filter-donate")
   .addEventListener("click", filterDonate);
-document
-  .querySelector("#filter-borrow")
-  .addEventListener("click", filterBorrow);
+
 document
   .querySelector("#filter-legend")
   .addEventListener("click", filterLegend);
@@ -23,21 +21,6 @@ function filterDonate() {
   });
 }
 
-function filterBorrow() {
-  let allDivs = document.querySelectorAll(".main");
-
-  allDivs.forEach((div) => {
-    div.style.display = "none";
-  });
-  let borrowDiv = document.querySelectorAll(".mainB");
-  borrowDiv.forEach((bDiv) => {
-    bDiv.style.display = "inline-block";
-    bDiv.style.backgroundColor = "#e5e7eb";
-    bDiv.style.width = "70%";
-    bDiv.style.height = "90vh";
-  });
-}
-
 function filterLegend() {
   let allDivs = document.querySelectorAll(".main");
 
@@ -52,7 +35,8 @@ function filterLegend() {
     lDiv.style.height = "90vh";
   });
 }
-
+module.exports = filterDonate;
+module.exports = filterLegend;
 /*let carousel = document.querySelector(".carousel");
 
 let carouselInner = document.querySelector(".carousel-inner");

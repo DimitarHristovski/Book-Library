@@ -170,6 +170,7 @@ function listenClicks() {
 
 showBooksInLibrary();
 listenClicks();
+
 module.exports = showLibraryInfo;
 module.exports = addBookToLibrary;
 module.exports = validateForm;
