@@ -176,7 +176,6 @@ describe("Library app", () => {
     let modal;
 
     beforeEach(() => {
-      // create modal element and append to the document
       modal = document.createElement("div");
       modal.id = "modal";
       modal.innerHTML = `
@@ -191,7 +190,6 @@ describe("Library app", () => {
     });
 
     afterEach(() => {
-      // remove the modal element from the document after each test
       document.body.removeChild(modal);
     });
 
