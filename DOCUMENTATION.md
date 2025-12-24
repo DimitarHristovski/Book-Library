@@ -16,15 +16,15 @@ The architecture of the Book Library application is straightforward, focusing on
 
 ### Core Features
 
-1. **Add Book** (js/scripts.js): This feature allows users to add new books to their library. The implementation captures user input from a form and stores the book details in a structured format. This functionality is essential for users who wish to expand their collection and keep track of new acquisitions.
+1. **Add Book** (`js/scripts.js`): This feature allows users to add new books to their library. The implementation captures user input from a form and stores the book details in a structured format. This functionality is essential for users who wish to expand their collection and keep track of new acquisitions. The code ensures that all necessary fields are filled out before adding a book, preventing incomplete entries.
 
-2. **View Books** (js/scripts.js): Users can view a list of all books in their library. This feature retrieves book data from storage and displays it in a user-friendly format. It is crucial for users to have an overview of their collection, making it easier to find specific titles or authors.
+2. **View Books** (`js/scripts.js`): Users can view a list of all books in their library. This feature retrieves book data from storage and displays it in a user-friendly format. It is crucial for users to have an overview of their collection, making it easier to find specific titles or authors. The display is dynamically updated to reflect any changes made to the library, such as adding or deleting books.
 
-3. **Delete Book** (js/scripts.js): This functionality enables users to remove books from their library. By selecting a book and confirming the deletion, users can manage their collection effectively, ensuring that only relevant titles remain. This feature is particularly useful for users who may want to declutter their library.
+3. **Delete Book** (`js/scripts.js`): This functionality enables users to remove books from their library. By selecting a book and confirming the deletion, users can manage their collection effectively, ensuring that only relevant titles remain. This feature is particularly useful for users who may want to declutter their library.
 
-4. **Filter Books** (js/filter.js): Users can filter their book collection based on various criteria, such as author or genre. This feature enhances the user experience by allowing quick access to specific books, making it easier to locate desired titles among a larger collection.
+4. **Filter Books** (`js/filter.js`): Users can filter their book collection based on various criteria, such as author or genre. This feature enhances the user experience by allowing quick access to specific books, making it easier to locate desired titles among a larger collection.
 
-5. **Responsive Design** (styles.css): The application is designed to be responsive, ensuring that it functions well on various devices, including desktops, tablets, and smartphones. This feature is crucial in today's mobile-centric world, allowing users to access their library from anywhere.
+5. **Responsive Design** (`assets/css/style.css`): The application is designed to be responsive, ensuring that it functions well on various devices, including desktops, tablets, and smartphones. This feature is crucial in today's mobile-centric world, allowing users to access their library from anywhere.
 
 ### Advanced Features
 
@@ -44,7 +44,7 @@ To set up the Book Library application, ensure you have the following prerequisi
 1. **Clone the Repository**  
    Clone the Book Library repository to your local machine using the following command:
    ```bash
-   git clone https://github.com/DimitriHristovski/Book-Library.git
+   git clone https://github.com/DimitarHristovski/Book-Library.git
    ```
 
 2. **Navigate to the Project Directory**  
@@ -85,49 +85,47 @@ To set up the Book Library application, ensure you have the following prerequisi
 - **Issue: Books Not Displaying**  
   If the list of books is not displaying, verify that the data is being correctly retrieved from storage. Check the implementation in `js/scripts.js` to ensure that the retrieval logic is functioning as expected.
 
-- **Issue: Styles Not Applying**  
-  If the styles are not being applied, ensure that the `styles.css` file is correctly linked in the `index.html` file. Check for any console errors that may indicate issues with loading the CSS file.
+- **Issue: Styles Not Loading**  
+  If the styles are not applied, check the console for errors related to loading the `styles.css` file.
+
+- **Issue: Data Loss on Refresh**  
+  Currently, the application does not persist data across page refreshes. This is a limitation that may be addressed in future updates.
+
+- **Issue: Compatibility Issues**  
+  The application may not function correctly in older browsers. It is recommended to use modern browsers for the best experience.
+
+- **Issue: Performance on Large Libraries**  
+  The application may experience performance issues when managing a very large number of books. Optimization may be needed for scalability.
 
 ## Usage
 
 ### Quick Start Guide
 
-1. Open the Book Library application in your web browser.
-2. Use the form to add a new book by entering the title, author, and any other relevant details.
-3. Click the "Add Book" button to save the book to your library.
-4. View your collection in the main display area.
-5. Use the filter options to find specific books quickly.
-6. To remove a book, select it from the list and click the "Delete" button.
+1. **Add a Book**  
+   Navigate to the application and fill out the form with the book's details. Ensure all required fields are completed before submitting.
+
+2. **View Your Library**  
+   Once books are added, they will appear in the list. You can scroll through to view all entries.
+
+3. **Filter Books**  
+   Use the filter options to narrow down the list based on specific criteria like author or genre.
+
+4. **Delete a Book**  
+   Select a book from the list and choose the delete option to remove it from your library.
+
+5. **Responsive Access**  
+   Access your library from any device, ensuring you have your collection at your fingertips wherever you go.
 
 ### Detailed Usage Examples
 
-#### Basic Example
+- **Basic Example**  
+  To add a book, fill out the form fields for title, author, and genre, then click 'Add Book'. The book will appear in the list below.
 
-To add a book to your library, fill out the form with the following details:
+- **Advanced Example**  
+  Use the filter functionality to display only books by a specific author. Enter the author's name in the filter field and press 'Filter'.
 
-- Title: "The Great Gatsby"
-- Author: "F. Scott Fitzgerald"
-
-After entering the details, click the "Add Book" button. The book will then appear in your library list.
-
-Expected output:
-```
-Books in Library:
-1. The Great Gatsby by F. Scott Fitzgerald
-```
-
-#### Advanced Example
-
-If you have multiple books, you can filter them by author. For instance, if you have the following books:
-
-- "The Great Gatsby" by "F. Scott Fitzgerald"
-- "To Kill a Mockingbird" by "Harper Lee"
-
-You can enter "Harper Lee" in the filter input field, and the application will display only the books authored by Harper Lee.
-
-#### Error Handling Example
-
-If you try to add a book without filling out the title field, the application should display an error message indicating that the title is required. This helps users understand what went wrong and how to fix it.
+- **Error Handling Example**  
+  If you try to add a book without filling out the title field, the application should display an error message indicating that the title is required. This helps users understand what went wrong and how to fix it.
 
 ## API/Function Examples
 
@@ -153,11 +151,11 @@ The application leverages the Document Object Model (DOM) to dynamically update 
 
 ### Component Relationships
 
-- **Main Application Component** (index.html): The entry point of the application, where all other components are rendered.
-- **Book Management Logic** (js/scripts.js): Handles the core functionalities of adding, viewing, and deleting books.
-- **Filtering Logic** (js/filter.js): Manages the filtering of books based on user input.
+- **Main Application Component** (`index.html`): The entry point of the application, where all other components are rendered.
+- **Book Management Logic** (`js/scripts.js`): Handles the core functionalities of adding, viewing, and deleting books.
+- **Filtering Logic** (`js/filter.js`): Manages the filtering of books based on user input.
 
-## Project Structure
+### Project Structure
 
 ```
 Book-Library/
@@ -201,71 +199,83 @@ Book-Library/
    Create a personal copy of the repository by forking it on GitHub.
 
 2. **Create a Feature Branch**  
-   Create a new branch for your feature:
+   Create a new branch for your feature or bug fix:
    ```bash
-   git checkout -b feature/YourFeatureName
+   git checkout -b feature-name
    ```
 
 3. **Commit Your Changes**  
-   Commit your changes with a descriptive message:
+   Make your changes and commit them with a descriptive message:
    ```bash
-   git commit -m "Add new feature"
+   git commit -m "Description of changes"
    ```
 
 4. **Push to Your Branch**  
-   Push your changes to your forked repository:
+   Push your changes to your feature branch:
    ```bash
-   git push origin feature/YourFeatureName
+   git push origin feature-name
    ```
 
 5. **Open a Pull Request**  
-   Navigate to the original repository and open a pull request, describing your changes.
+   Navigate to the original repository and open a pull request for your changes.
 
 ### Development Standards
 
-- **Code Comments**: Ensure that your code is well-commented to explain complex logic.
-- **Documentation**: Update the README.md file with any new features or changes.
-- **Testing**: Write tests for new features to ensure code quality.
+- **Code Comments**: Ensure all code is well-documented with comments explaining complex logic.
+- **Testing**: Write tests for new features and ensure existing tests pass.
+- **Code Style**: Follow the project's coding style and conventions.
+- **Documentation**: Update documentation to reflect changes and new features.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more information.
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
 
 ## Additional Sections
 
 ### FAQ
 
-- **Q1: How do I add a new book?**  
-  A1: To add a new book, fill out the form with the book's title and author, then click the "Add Book" button. The book will be added to your library.
+- **Q1: How do I add a book to the library?**  
+  A1: Navigate to the application, fill out the form with the book's details, and click 'Add Book'. Ensure all required fields are completed.
 
-- **Q2: Can I delete a book from my library?**  
-  A2: Yes, you can delete a book by selecting it from the list and clicking the "Delete" button.
+- **Q2: Can I filter books by genre?**  
+  A2: Yes, use the filter functionality to narrow down the list based on specific criteria like genre.
 
-- **Q3: How do I filter my books?**  
-  A3: You can filter your books by entering criteria such as the author's name in the filter input field. The list will update to show only matching books.
+- **Q3: What should I do if the styles are not loading?**  
+  A3: Check the console for errors related to loading the `styles.css` file and ensure the file path is correct.
 
-- **Q4: Is the application mobile-friendly?**  
-  A4: Yes, the Book Library application is designed to be responsive and works well on mobile devices.
+- **Q4: How can I contribute to the project?**  
+  A4: Fork the repository, create a feature branch, make your changes, and open a pull request.
 
-- **Q5: Can I contribute to the project?**  
-  A5: Absolutely! Please follow the contributing guidelines outlined in the README to submit your changes.
+- **Q5: Is there a way to persist data across page refreshes?**  
+  A5: Currently, the application does not support data persistence across refreshes. This may be addressed in future updates.
+
+### Troubleshooting
+
+- **Issue: Unable to Add Book**  
+  Ensure all required fields in the form are filled out correctly. Check the console for error messages.
+
+- **Issue: Books Not Displaying**  
+  Verify that the data is being correctly retrieved from storage. Check the implementation in `js/scripts.js`.
+
+- **Issue: Styles Not Loading**  
+  Check the console for errors related to loading the `styles.css` file.
+
+- **Issue: Data Loss on Refresh**  
+  Currently, the application does not persist data across page refreshes.
+
+- **Issue: Compatibility Issues**  
+  Use modern browsers for the best experience.
 
 ### Known Issues
 
-- **Issue: Filtering Not Working**  
-  The filtering feature may not work correctly if the input is not formatted properly. Ensure that you are entering the correct author names.
+- **Data Loss on Refresh**  
+  The application does not persist data across page refreshes.
 
-- **Issue: Styles Not Loading**  
-  If the styles are not applied, check the console for errors related to loading the `styles.css` file.
+- **Performance on Large Libraries**  
+  The application may experience performance issues with a large number of books.
 
-- **Issue: Data Loss on Refresh**  
-  Currently, the application does not persist data across page refreshes. This is a limitation that may be addressed in future updates.
-
-- **Issue: Compatibility Issues**  
-  The application may not function correctly in older browsers. It is recommended to use modern browsers for the best experience.
-
-- **Issue: Performance on Large Libraries**  
-  The application may experience performance issues when managing a very large number of books. Optimization may be needed for scalability.
+- **Compatibility Issues**  
+  The application may not function correctly in older browsers.
 
 ### Roadmap
 
